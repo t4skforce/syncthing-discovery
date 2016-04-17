@@ -3,6 +3,8 @@ Docker Container for the global discovery server for the [http://syncthing.net/]
 
 The files for this container can be found at my [GitHub repo](https://github.com/t4skforce/syncthing-discovery)
 
+[![](https://badge.imagelayers.io/t4skforce/syncthing-discovery:latest.svg)](https://imagelayers.io/?images=t4skforce/syncthing-discovery:latest 'Get your own badge on imagelayers.io')
+
 # About the Container
 
 This build is based on [ubuntu:latest](https://hub.docker.com/_/ubuntu/) and installs the latests successful build of the syncthing discovery server.
