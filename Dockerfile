@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:latest
 # Syncthing-Discovery Server
 
 ENV DEBUG           false
