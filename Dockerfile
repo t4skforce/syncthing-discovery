@@ -33,6 +33,7 @@ CMD /home/discosrv/discosrv/discosrv \
         -limit-cache=${LIMIT_CACHE} \
         -limit-burst=${LIMIT_BURST} \
         -stats-file="/home/discosrv/stats" \
+        -db-dsn="file:///home/discosrv/discosrv.db" \
         -cert="/home/discosrv/certs/cert.pem" \
         -key="/home/discosrv/certs/key.pem" \
         -debug="${DEBUG}"
