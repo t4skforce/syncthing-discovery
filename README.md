@@ -89,7 +89,7 @@ CERT_HOME="/your/home/certs"
 # download updates
 docker pull t4skforce/syncthing-discovery:latest
 # stop current running image
-docker stop syncthing-discovery
+systemctl stop syncthing-discovery
 # remove container
 docker rm syncthing-discovery
 # start with new base image
