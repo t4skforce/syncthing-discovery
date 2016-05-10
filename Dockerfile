@@ -11,16 +11,15 @@ ENV LIMIT_BURST     20
 # Limiter cache entries
 ENV LIMIT_CACHE     25000
 
-
 RUN apt-get update && \
     apt-get install ca-certificates wget -y && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    wget -q https://api.github.com/repos/syncthing/discosrv/releases/latest -O- | egrep "browser_download_url.*discosrv-linux-amd64.tar" | cut -d'"' -f4 | xargs wget -o /tmp/discosrv.tar.gz && \
+    wget $(wget -q https://api.github.com/repos/syncthing/discosrv/releases/latest -O- | egrep "browser_download_url.*discosrv-linux-amd64.tar" | cut -d'"' -f4) -O /tmp/discosrv.tar.gz && \
+    apt-get remove wget -y &&\
     tar -xzvf /tmp/discosrv.tar.gz && \
     rm /tmp/discosrv.tar.gz
-
 
 EXPOSE ${SERV_PORT}
 
