@@ -16,9 +16,9 @@ RUN apt-get update && \
     apt-get install ca-certificates -y && \
     apt-get autoremove -y && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-ADD http://build.syncthing.net/job/discosrv/lastSuccessfulBuild/artifact/discosrv-linux-amd64.tar.gz /tmp/discosrv.tar.gz
-RUN tar -xzvf /tmp/discosrv.tar.gz && \
+    rm -rf /var/lib/apt/lists/* && \
+    wget -q https://api.github.com/repos/syncthing/discosrv/releases/latest -O- | egrep "browser_download_url.*discosrv-linux-amd64.tar" | cut -d'"' -f4 | xargs wget -o /tmp/discosrv.tar.gz && \
+    tar -xzvf /tmp/discosrv.tar.gz && \
     rm /tmp/discosrv.tar.gz
 
 
