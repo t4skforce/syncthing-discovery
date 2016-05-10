@@ -13,7 +13,7 @@ ENV LIMIT_CACHE     25000
 
 
 RUN apt-get update && \
-    apt-get install ca-certificates -y && \
+    apt-get install ca-certificates wget -y && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
