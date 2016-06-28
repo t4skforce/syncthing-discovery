@@ -16,7 +16,7 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    wget $(wget -q https://api.github.com/repos/syncthing/discosrv/releases/latest -O- | egrep "browser_download_url.*discosrv-linux-amd64.*" | cut -d'"' -f4) -O /tmp/discosrv.tar.gz && \
+    wget $(wget -q https://api.github.com/repos/syncthing/discosrv/releases/latest -O- | egrep "browser_download_url.*discosrv-linux-amd64.*.gz" | cut -d'"' -f4) -O /tmp/discosrv.tar.gz && \
     apt-get remove wget -y &&\
     tar -xzvf /tmp/discosrv.tar.gz && \
     rm /tmp/discosrv.tar.gz
