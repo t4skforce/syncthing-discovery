@@ -35,6 +35,8 @@ docker stop syncthing-discovery
 docker rm syncthing-discovery
 # start with new base image
 docker run --name syncthing-discovery -d -p 22026:22026 -v /your/home:/home/discosrv/certs:ro --restart=always t4skforce/syncthing-discovery:latest
+# cleanup docker images
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}") > /dev/null 2>&1
 ```
 
 # Autostart
@@ -99,7 +101,7 @@ docker stop syncthing-discovery
 # start via service
 systemctl start syncthing-discovery
 # cleanup docker images
-docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}") > /dev/null 2>&1
 ```
 
 Next we need to make this file executable `chmod +x /root/syncthing-discovery_upgrade.sh`, and test if the upgrade script works by calling the shell-script and checking the service status afterwards:
