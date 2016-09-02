@@ -18,7 +18,7 @@ ENV LIMIT_CACHE     25000
 #               Setup                  #
 ########################################
 ENV USERNAME discosrv
-ENV	USERGROUP discosrv
+ENV USERGROUP discosrv
 ENV APPUID 1000
 ENV APPGID 1000
 ENV USER_HOME /home/discosrv
