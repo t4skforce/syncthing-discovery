@@ -4,15 +4,7 @@ FROM debian:latest
 ########################################
 # Syncthing-Discovery Server
 
-ENV DEBUG           false
 ENV SERV_PORT       22026
-
-# Allowed average package rate, per 10 s
-ENV LIMIT_AVG       10
-# Allowed burst size, packets
-ENV LIMIT_BURST     20
-# Limiter cache entries
-ENV LIMIT_CACHE     25000
 
 ########################################
 #               Setup                  #
@@ -58,11 +50,7 @@ VOLUME ${USER_HOME}/certs
 
 CMD ${USER_HOME}/server/discosrv \
     -listen=":${SERV_PORT}" \
-    -limit-avg=${LIMIT_AVG} \
-    -limit-cache=${LIMIT_CACHE} \
-    -limit-burst=${LIMIT_BURST} \
-    -stats-file="/home/discosrv/stats" \
-    -db-dsn="file://${USER_HOME}/db/discosrv.db" \
+    -db-dir="${USER_HOME}/db/discosrv.db" \
     -cert="${USER_HOME}/certs/cert.pem" \
     -key="${USER_HOME}/certs/key.pem" \
-    -debug="${DEBUG}"
+    ${DISCO_OPTS}
