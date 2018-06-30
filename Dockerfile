@@ -5,6 +5,7 @@ FROM debian:latest
 # Syncthing-Discovery Server
 
 ENV SERV_PORT       22026
+ENV DISCO_OPTS      ""
 
 ########################################
 #               Setup                  #
