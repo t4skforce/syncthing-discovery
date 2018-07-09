@@ -19,6 +19,13 @@ ENV BUILD_REQUIREMENTS curl openssl
 ENV REQUIREMENTS ca-certificates
 ########################################
 
+########################################
+#               Build                  #
+########################################
+ENV VERSION v0.14.44
+ENV DOWNLOADURL https://github.com/syncthing/discosrv/releases/download/v0.14.44/stdiscosrv-linux-amd64-v0.14.44.tar.gz
+########################################
+
 USER root
 ENV DEBIAN_FRONTEND noninteractive
 # setup
@@ -32,7 +39,7 @@ RUN apt-get update -qqy \
 
 # install disco
 WORKDIR /tmp/
-RUN curl -Ls $(curl -Ls https://api.github.com/repos/syncthing/discosrv/releases/latest | egrep "browser_download_url.*discosrv-linux-amd64.*.gz" | cut -d'"' -f4) --output discosrv.tar.gz \
+RUN curl -Ls ${DOWNLOADURL} --output discosrv.tar.gz \
 	&& tar -zxf discosrv.tar.gz \
 	&& rm discosrv.tar.gz \
 	&& mkdir -p ${USER_HOME}/server ${USER_HOME}/certs ${USER_HOME}/db \
