@@ -22,8 +22,8 @@ ENV REQUIREMENTS ca-certificates
 ########################################
 #               Build                  #
 ########################################
-ENV VERSION "v1.3.1"
-ENV DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v1.3.1/stdiscosrv-linux-amd64-v1.3.1.tar.gz"
+ENV VERSION "v1.8.0"
+ENV DOWNLOADURL "https://github.com/syncthing/discosrv/releases/download/v1.8.0/stdiscosrv-linux-amd64-v1.8.0.tar.gz"
 ########################################
 
 USER root
