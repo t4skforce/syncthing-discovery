@@ -24,7 +24,7 @@ ENV REQUIREMENTS ca-certificates
 ########################################
 ARG VERSION=""
 ARG DOWNLOADURL=""
-ARG BUILD_DATE=""
+ARG BUILD_DATE="20211004"
 ########################################
 
 USER root
