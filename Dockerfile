@@ -24,7 +24,7 @@ ENV REQUIREMENTS ca-certificates
 ########################################
 ARG VERSION="v1.29.6"
 ARG DOWNLOADURL="https://github.com/syncthing/discosrv/releases/download/v1.29.6/stdiscosrv-linux-amd64-v1.29.6.tar.gz"
-ARG BUILD_DATE="2025-05-12T07:17:19Z"
+ARG BUILD_DATE="2025-05-12T12:10:34Z"
 ########################################
 
 USER root
